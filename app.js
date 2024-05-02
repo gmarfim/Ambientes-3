@@ -29,7 +29,49 @@ function soma(a, b) {
     return a + b;
 }
 
-// FIBO
+// SUBTRACAO
+// a, b = numeros a suubtrair
+
+app.post('/subtracao', function (req, res) {
+  var body = req.body;
+  var resultado = subtracao(body.a, body.b);
+  
+  res.send(`O resultado da subtraçao de ${body.a} e ${body.b} é ${resultado}`);
+});
+
+function subtracao(a, b) {
+  return a - b;
+}
+
+// MULTIPLICAÇAO
+// a, b = numeros a multiplicar
+
+app.post('/multiplicacao', function (req, res) {
+  var body = req.body;
+  var resultado = multiplicacao(body.a, body.b);
+  
+  res.send(`O resultado da multiplicaçao de ${body.a} e ${body.b} é ${resultado}`);
+});
+
+function multiplicacao(a, b) {
+  return a * b;
+}
+
+// DIVISAO
+// a, b = numeros a dividir
+
+app.post('/divisao', function (req, res) {
+  var body = req.body;
+  var resultado = divisao(body.a, body.b);
+  
+  res.send(`O resultado da divisao dentre ${body.a} e ${body.b} é ${resultado}`);
+});
+
+function divisao(a, b) {
+  return a / b;
+}
+
+// FIBONACCI
 // a = quantidade de números
 
 app.post('/fibo', function (req, res) {
